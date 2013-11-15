@@ -1,0 +1,13 @@
+{
+  "name": "davidcollom-serf",
+  "version": "0.1.0",
+  "summary": "",
+  "author": "David Collom",
+  "description": "",
+  "dependencies": [],
+  "types": [],
+  "checksums": {},
+  "source": "https://github.com/davidcollom/puppet-serf",
+  "project_page": "https://github.com/davidcollom/puppet-serf",
+  "license": "MIT"
+}
