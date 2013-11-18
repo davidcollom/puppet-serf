@@ -1,6 +1,6 @@
 class serf::params{
   $version          = '0.2.1'
-  $protocol_version = 1
+  $protocol         = 1
   $bind             = $::ipaddress
   $config_dir       = '/etc/serf'
   $config_file      = "${config_dir}/serf.conf"
@@ -8,20 +8,12 @@ class serf::params{
   $encrypt          = ''
   $log_level        = 'info'
   $node             = $::fqdn
-  $protocol         = $::serf::params::protocol
-  $role             = $::serf::params::role
+  $role             = ''
   $rpc_addr         = "${bind}:7373"
   $install_path     = '/usr/local/bin/'
 
-  $event_handler    = [
-    '/usr/bin/echo',
-    '/usr/bin/bob'
-  ]
-  $join             = [
-    '127.0.0.1',
-    '10.6.20.184',
-    '10.5.2.101'
-  ]
+  $event_handler    = []
+  $join             = []
 
   case $::osfamily {
     'Debian': {
