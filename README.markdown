@@ -94,3 +94,7 @@ Testing on other platforms has been light and cannot be guaranteed.
 
 This module is based on the example provided by Mitchell Hashimoto at [https://github.com/hashicorp/serf/](https://github.com/hashicorp/serf/blob/master/demo/web-load-balancer/setup_serf.sh)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/davidcollom/puppet-serf/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
