@@ -73,8 +73,7 @@ Installation path to install serf executable, this should be within your normal 
 defaults to: ```/usr/local/bin```
 
 #####`install_url`
-Where to download serf from, this defaults to:
-```https://dl.bintray.com/mitchellh/serf/${version}_linux_${::architecture}.zip```
+Where to download serf from, this defaults to: ```https://dl.bintray.com/mitchellh/serf/${version}_linux_${::architecture}.zip```
 
 #####`config_owner` and `config_group`
 Specify who is to become owner of ```$config_file```
