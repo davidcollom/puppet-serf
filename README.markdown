@@ -29,6 +29,8 @@ The version you wish to install
 #####`bind`
 The address that Serf will bind to for communication with other Serf nodes
 
+__Note__ Changing the bind port also requires you specify the `rpc_addr` otherwise `rpc_addr` will remain the default `$::ipaddress` fact
+
 #####`config_dir`
 The directory you wish to store the serf config file in, defaults to: '/etc/serf/'
 
@@ -43,7 +45,7 @@ Secret key to use for encryption of Serf network traffic
 Array of event handlers, **NOTE**: No validation is performed if these files exist.
 
 #####`join`
-Array of IP's known to the Serf network already, This was added to allow for hiera data to be passed and allow for a "master" node which is aware of all serf clusters but is in a "monitoring" state. 
+Array of IP's known to the Serf network already, This was added to allow for hiera data to be passed and allow for a "master" node which is aware of all serf clusters but is in a "monitoring" state.
 
 #####`log_level`
 Change logging levels, Added for debugging purposes, defaults to: ```info```
@@ -57,15 +59,16 @@ Protocol Version to use- this is for backwards compatability and defaults to 1
 Optional Role for specific node
 
 #####`rpc_addr`
-The address that Serf will bind to for the agent's internal RPC server, defaults to: ```"${bind}:7373"```
+The address that Serf will bind to for the agent's internal RPC server, defaults to: ```"${::ipaddress}:7373"```
 
 Eg:
 ```
+$::ipaddress='10.5.2.xxx'
 class{'serf':
     bind => '10.6.2.xxxx'
 }
 ```
-rpc_addr would be ```'10.6.2.xxxx:7373'```
+rpc_addr would be ```'10.5.2.xxxx:7373'```
 
 
 #####`install_path` (Private)
