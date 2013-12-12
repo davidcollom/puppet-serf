@@ -1,5 +1,8 @@
 #puppet-[Serf](http://www.serfdom.io)
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/davidcollom/puppet-serf/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/davidcollom/puppet-serf.png?branch=master)](https://travis-ci.org/davidcollom/puppet-serf)
+
 ##Overview
 
 The Serf module installs, configures, and manages a Serf agent.
@@ -98,5 +101,4 @@ This module is based on the example provided by Mitchell Hashimoto at [https://g
 
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/davidcollom/puppet-serf/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
