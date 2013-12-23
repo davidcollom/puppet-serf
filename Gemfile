@@ -7,6 +7,7 @@ else
 end
 
 gem 'rake'
+gem 'json'
 gem 'puppet-lint'
 gem 'rspec-puppet'
 gem 'puppetlabs_spec_helper'
