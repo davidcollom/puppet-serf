@@ -1,5 +1,5 @@
 name    'davidcollom-serf'
-version '0.1.1'
+version '0.1.2'
 source 'https://github.com/davidcollom/puppet-serf'
 author 'David Collom'
 license 'MIT'
