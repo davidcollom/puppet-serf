@@ -1,5 +1,5 @@
 class serf::params{
-  $version          = '0.2.1'
+  $version          = '0.3.0'
   $protocol_version = 1
   $bind             = $::ipaddress
   $config_dir       = '/etc/serf'
@@ -22,16 +22,6 @@ class serf::params{
     '10.6.20.184',
     '10.5.2.101'
   ]
-
-  case $::osfamily {
-    'Debian': {
-      $install_url    = "https://dl.bintray.com/mitchellh/serf/${version}_linux_${::architecture}.zip"
-    }
-    default: {
-      fail "Operating system ${::operatingsystem} is not supported yet."
-    }
-  }
-
 
   $service_name = 'serf'
   $service_ensure = true

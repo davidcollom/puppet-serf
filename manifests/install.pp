@@ -11,9 +11,18 @@ class serf::install{
     }->Exec['unzip_serf']
   }
 
+  case $::osfamily {
+    'Debian': {
+      $install_url = "https://dl.bintray.com/mitchellh/serf/${::serf::version}_linux_${::architecture}.zip"
+    }
+    default: {
+      fail "Operating system ${::operatingsystem} is not supported yet."
+    }
+  }
+
   exec{
     'download_serf':
-      command => "wget ${::serf::install_url} -c -O /tmp/serf_${::serf::version}.zip";
+      command => "wget ${install_url} -c -O /tmp/serf_${::serf::version}.zip";
     'unzip_serf':
       command =>  "unzip -o /tmp/serf_${::serf::version}.zip -d /tmp/serf_${::serf::version}/";
     'install_serf':
