@@ -12,6 +12,9 @@ class serf::params{
   $role             = $::serf::params::role
   $rpc_addr         = "${bind}:7373"
   $install_path     = '/usr/local/bin/'
+  $install_method   = 'url'
+  $package_name     = 'serf'
+  $package_ensure   = 'present'
 
   $event_handler    = [
     '/usr/bin/echo',
