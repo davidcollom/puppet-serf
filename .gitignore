@@ -5,3 +5,5 @@
 /.watchr
 
 /Gemfile.lock
+
+.DS_Store
