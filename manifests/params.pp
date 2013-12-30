@@ -7,6 +7,7 @@ class serf::params{
   $log_dir          = '/var/log/serf'
   $encrypt          = ''
   $log_level        = 'info'
+  $log_file         = '/var/log/serf.log'
   $node             = $::fqdn
   $protocol         = $::serf::params::protocol
   $role             = $::serf::params::role

@@ -21,6 +21,7 @@ class serf (
   $join           = $::serf::params::join,
 
   $log_level      = $::serf::params::log_level,
+  $log_file       = $::serf::params::log_file,
   $node           = $::serf::params::node,
   $protocol       = $::serf::params::protocol,
   $role           = $::serf::params::role,
