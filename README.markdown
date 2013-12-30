@@ -81,13 +81,13 @@ defaults to: ```/usr/local/bin```
 #####`install_url`
 Where to download serf from, this defaults to: ```https://dl.bintray.com/mitchellh/serf/${version}_linux_${::architecture}.zip```
 
-#####`install\_method`
+#####`install_method`
 Defaults to `url` but can be `package` if you want to install via a system package.
 
-#####`package\_name`
+#####`package_name`
 Only valid when the install_method == package. Defaults to `serf`.
 
-#####`package\_ensure`
+#####`package_ensure`
 Only valid when the install_method == package. Defaults to `present`.
 
 #####`config_owner` and `config_group`
@@ -103,5 +103,5 @@ Testing on other platforms has been light and cannot be guaranteed.
 
 ### Authors
 
-This module is based on the example provided by Mitchell Hashimoto at [https://github.com/hashicorp/serf/](https://github.com/hashicorp/serf/blob/master/demo/web-load-balancer/setup_serf.sh)
 
+This module is based on the example provided by Mitchell Hashimoto at [https://github.com/hashicorp/serf/](https://github.com/hashicorp/serf/blob/master/demo/web-load-balancer/setup_serf.sh)
