@@ -1,5 +1,15 @@
 class serf::install{
 
+  # mitchellh refers to anything 64bit as amd64
+  case $::architecture {
+    x86_64: {
+      $_architecture = 'amd64'
+    }
+    default: {
+      $_architecture = $::architecture
+    }
+  }
+
   if $::serf::install_method == 'url' {
     Exec{
       path    =>  '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
@@ -11,8 +21,8 @@ class serf::install{
       }->Exec['unzip_serf']
     }
     case $::osfamily {
-      'Debian': {
-        $install_url = "https://dl.bintray.com/mitchellh/serf/${::serf::version}_linux_${::architecture}.zip"
+      'Debian', 'RedHat': {
+        $install_url = "https://dl.bintray.com/mitchellh/serf/${::serf::version}_linux_${_architecture}.zip"
       }
       default: {
         fail "Operating system ${::operatingsystem} is not supported yet."
