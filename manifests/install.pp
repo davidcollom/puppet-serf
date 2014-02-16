@@ -33,8 +33,8 @@ class serf::install{
     package { $::serf::package_name:
       ensure => $::serf::package_ensure
     }
- } else {
-   fail("The provided install method ${::serf::install_method} is invalid")
- }
+  } else {
+    fail("The provided install method ${::serf::install_method} is invalid")
+  }
 
 }
