@@ -13,6 +13,7 @@
 class serf (
   $version        = $::serf::params::version,
   $bind           = $::serf::params::bind,
+  $advertise      = $::serf::params::advertise,
   $config_file    = $::serf::params::config_file,
   $config_dir     = $::serf::params::config_dir,
   $encrypt        = $::serf::params::encrypt,
