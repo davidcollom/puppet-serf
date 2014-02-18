@@ -20,6 +20,7 @@ SUBNET="192.168.2"
 
 Vagrant.configure("2") do |config|
   config.vm.synced_folder "./", "/etc/puppet/modules/serf"
+  config.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777","fmode=777"]
   config.vm.provision :puppet, :options => ["--pluginsync"],
                       :facter           => { "first_node_ip" => "#{SUBNET}.10" } do |puppet|
     puppet.manifests_path = "example"
