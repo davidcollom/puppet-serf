@@ -64,6 +64,9 @@ Optional Role for specific node
 #####`rpc_addr`
 The address that Serf will bind to for the agent's internal RPC server, defaults to: ```"${::ipaddress}:7373"```
 
+#####`advertise`
+The address that Serf will provide to other nodes to reach it; defaults to ```${::ipaddress}`.
+
 Eg:
 ```
 $::ipaddress='10.5.2.xxx'
@@ -100,6 +103,22 @@ This module has been tested on:
 * Ubuntu 12.04
 
 Testing on other platforms has been light and cannot be guaranteed.
+
+## Vagrant example
+
+1. Install [Vagrant](http://vagrantup.com) and [VirtualBox](http://virtualbox.org)
+2. Clone this repository: `git clone https://github.com/danieldreier/serf-demo.git`
+3. `cd serf-demo` then run `vagrant up node0` and wait for the first node to start
+4. `vagrant ssh -c 'serf monitor' node0` to monitor the communication the first node sees
+5. in another terminal window, run `vagrant up` and watch members join the cluster
+6. `vagrant ssh node1` then run `serf event foo bar` will trigger an event titled "foo" with a payload "bar"
+7. On node1, run `serf members` to get a list of serf cluster members
+8. `exit` out to your regular command line, run `vagrant halt node2`, then repeat step 7 to see node2's status change to 'failed'.
+
+When you're done, run `vagrant halt` to shut them down, or `vagrant destroy` to remove the VMs entirely.
+
+You can modify the number of nodes created by editing `INSTANCES=5` in the Vagrantfile to some other value, then running `vagrant up` again to bring up the new nodes. If you add other services to the nodes, you'll probably need to increase `MEMORY=128` to `MEMORY=256` or greater.
+
 
 ### Authors
 
