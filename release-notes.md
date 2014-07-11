@@ -1,9 +1,3 @@
-Version 1.0.0
--------------
-
-- Closes #11 (b3beb8c David Collom)
-- add support for rhel/centos (5467198 Rob Greenwood)
-
 Version 0.2.0
 -------------
 
