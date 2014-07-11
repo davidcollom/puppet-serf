@@ -52,7 +52,7 @@ describe 'serf::config' do
     context '> 0.3.0' do
       let(:pre_condition) { 'class { "serf": version => "0.3.0" }' }
       it { should contain_file('/etc/serf/serf.conf').without_content(/\"bind_addr\":/) }
-      it { should contain_file('/etc/serf/serf.conf').with_content(/\"bind"\:) }
+      it { should contain_file('/etc/serf/serf.conf').with_content(/\"bind\"\:/) }
     end
   end
 
