@@ -1,6 +1,6 @@
 {
   "name": "davidcollom-serf",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "summary": "",
   "author": "David Collom",
   "description": "The Serf module installs, configures, and manages a Serf agent.",
