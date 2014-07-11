@@ -7,20 +7,30 @@
 
 The Serf module installs, configures, and manages a Serf agent.
 
+Firewall ports must be managed elsewhere.  If using default serf configuration, ensure that 7946 is open for serf node communication, and 7373 for RPC.
+
+
 ##Module Description
 
 The Serf module manages the installation and configuration of Serf
 
 ##Setup
 ```puppet
-include serf
+puppet module install davidcollom/serf
 ```
 
 ##Usage
+
+With defaults:
+```puppet
+include serf
+```
+
+On AWS, with sample event handler:
 ```puppet
 class{'serf':
-    bind            =>  $::ipaddress_eth1
-    event_handler   =>  ['/root/bin/handler.sh']
+    bind           => $::ec2_public_ipv4,
+    sample_handler => true,
 }
 ```
 
@@ -87,6 +97,12 @@ Where to download serf from, this defaults to: ```https://dl.bintray.com/mitchel
 #####`install_method`
 Defaults to `url` but can be `package` if you want to install via a system package.
 
+#####`sample_handler`
+Defaults to `false`, but if set to `true` this will install a sample event handler bash script.
+
+#####`handler_home`
+Defaults to `/opt/serf` and only used if `sample_handler` is true: where to install the handler script.
+
 #####`package_name`
 Only valid when the install_method == package. Defaults to `serf`.
 
@@ -101,6 +117,7 @@ Specify who is to become owner of ```$config_file```
 This module has been tested on:
 
 * Ubuntu 12.04
+* CentOS 6.4
 
 Testing on other platforms has been light and cannot be guaranteed.
 

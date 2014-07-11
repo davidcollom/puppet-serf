@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Handler for Serf Events
+#
+# Serf sets environment variables for each handler invocation:
+#  http://www.serfdom.io/docs/agent/event-handlers.html
+#
+
+# Config
+logFile="<%= @handler_home %>/events.log"
+
+# Get payload from stdin
+if read -t 0; then
+  payload=$(cat - )
+fi
+
+# Log event info for debugging
+echo -e "-----
+ SERF_EVENT=$SERF_EVENT
+ SERF_SELF_NAME=$SERF_SELF_NAME
+ SERF_SELF_ROLE=$SERF_SELF_ROLE
+ SERF_USER_EVENT=$SERF_USER_EVENT
+ SERF_USER_LTIME=$SERF_USER_LTIME
+ PAYLOAD=$payload
+" >> $logFile
+
+

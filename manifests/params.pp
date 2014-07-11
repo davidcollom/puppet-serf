@@ -15,17 +15,16 @@ class serf::params{
   $rpc_addr         = "${bind}:7373"
   $install_path     = '/usr/local/bin/'
   $install_method   = 'url'
+  $sample_handler   = true
+  $handler_home     = "/opt/serf"
   $package_name     = 'serf'
   $package_ensure   = 'present'
 
   $event_handler    = [
-    '/usr/bin/echo',
-    '/usr/bin/bob'
+    '/opt/serf/handler.sh'
   ]
   $join             = [
-    '127.0.0.1',
-    '10.6.20.184',
-    '10.5.2.101'
+    '127.0.0.1'
   ]
 
   $service_name = 'serf'
