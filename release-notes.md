@@ -1,3 +1,9 @@
+Version 1.1.0
+-------------
+
+- Bump Modulefile version (dc2afca David Collom)
+- Implement Tag / Role migration from 0.4.0 (6016075 David Collom)
+
 Version 1.0.0
 -------------
 
@@ -7,7 +13,6 @@ Version 1.0.0
 Version 0.2.0
 -------------
 
-- Closes #15 and #16 (2e7ac7e David Collom)
 - Syntax issue (1ef2ea9 David Collom)
 - Initial test for 0.3.0+ bind/bind_addr param (eea9121 David Collom)
 - remove old tests directory (68eac5f David Collom)
