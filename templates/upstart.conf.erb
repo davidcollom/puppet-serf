@@ -4,5 +4,5 @@ start on runlevel [2345]
 stop on runlevel [!2345]
 
 exec <%=@install_path%>serf agent \
-    -config-file=<%=@config_file%> >>@log_file 2>&1
+    -config-file=<%=@config_file%> >> <%=@log_file%> 2>&1
 

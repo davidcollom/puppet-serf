@@ -1,3 +1,9 @@
+Version 1.0.0
+-------------
+
+- Closes #11 (b3beb8c David Collom)
+- add support for rhel/centos (5467198 Rob Greenwood)
+
 Version 0.2.0
 -------------
 
@@ -7,5 +13,3 @@ Version 0.2.0
 - remove old tests directory (68eac5f David Collom)
 - Closes #16 (6cbde30 David Collom)
 - change bind_addr to bind (f5223ad Daniel Platt)
-
-

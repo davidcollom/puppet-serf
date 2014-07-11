@@ -101,6 +101,7 @@ Specify who is to become owner of ```$config_file```
 This module has been tested on:
 
 * Ubuntu 12.04
+* CentOS 6.4
 
 Testing on other platforms has been light and cannot be guaranteed.
 
