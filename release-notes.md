@@ -1,3 +1,9 @@
+Version 1.0.0
+-------------
+
+- Bump version in Modulefile (4c2f6d7 David Collom)
+- Release Notes updated (14ea031 David Collom)
+
 Version 0.2.0
 -------------
 
