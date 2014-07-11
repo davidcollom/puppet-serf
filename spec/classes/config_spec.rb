@@ -43,5 +43,17 @@ describe 'serf::config' do
     it { should contain_file('/etc/serf/serf.conf').that_notifies('Service[serf]')}
   end
 
+  context 'bind_addr key' do
+    context '< 0.3.0' do
+      let(:pre_condition) { 'class { "serf": version => "0.2.9" }' }
+      it { should contain_file('/etc/serf/serf.conf').with_content(/\"bind_addr\":/) }
+      it { should contain_file('/etc/serf/serf.conf').without_content(/\"bind\":/) }
+    end
+    context '> 0.3.0' do
+      let(:pre_condition) { 'class { "serf": version => "0.3.0" }' }
+      it { should contain_file('/etc/serf/serf.conf').without_content(/\"bind_addr\":/) }
+      it { should contain_file('/etc/serf/serf.conf').with_content(/\"bind"\:) }
+    end
+  end
 
 end
