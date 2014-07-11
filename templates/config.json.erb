@@ -2,7 +2,8 @@
 config_file= {}
 config_file['role'] = @role if @role
 config_file['node_name'] = @node if @node
-config_file['bind_addr'] = @bind if @bind
+bind_key = @version >= '0.3.0' ? 'bind' : 'bind_addr'
+config_file[bind_key] = @bind
 config_file['advertise'] = @advertise if @advertise
 config_file['encrypt_key'] = @encrypt_key if @encrypt_key
 config_file['log_level'] = @log_level if @log_level
