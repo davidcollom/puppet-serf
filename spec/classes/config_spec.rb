@@ -55,5 +55,17 @@ describe 'serf::config' do
       it { should contain_file('/etc/serf/serf.conf').with_content(/\"bind\"\:/) }
     end
   end
+  context 'role key' do
+    context '= 0.3.0' do
+      let(:pre_condition) { 'class { "serf": version => "0.3.0", role=>"abc" }' }
+      it { should contain_file('/etc/serf/serf.conf').with_content(/\"role\":/) }
+      it { should contain_file('/etc/serf/serf.conf').without_content(/\"tag\":/) }
+    end
+    context '> 0.4.0' do
+      let(:pre_condition) { 'class { "serf": version => "0.4.0", role=>"abc" }' }
+      it { should contain_file('/etc/serf/serf.conf').with_content(/\"tag\"\:/) }
+      it { should contain_file('/etc/serf/serf.conf').without_content(/\"role\":/) }
+    end
+  end
 
 end

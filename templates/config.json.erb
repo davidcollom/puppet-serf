@@ -1,6 +1,7 @@
 <%- require 'json'
 config_file= {}
-config_file['role'] = @role if @role
+role_key = @version >= '0.4.0' ? 'tag' : 'role'
+config_file[role_key] = @role if @role
 config_file['node_name'] = @node if @node
 bind_key = @version >= '0.3.0' ? 'bind' : 'bind_addr'
 config_file[bind_key] = @bind
