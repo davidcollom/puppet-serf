@@ -6,7 +6,7 @@ class serf::params{
   $config_dir       = '/etc/serf'
   $config_file      = "${config_dir}/serf.conf"
   $log_dir          = '/var/log/serf'
-  $encrypt          = ''
+  $encrypt_key      = ''
   $log_level        = 'info'
   $log_file         = '/var/log/serf.log'
   $node             = $::fqdn

@@ -16,7 +16,7 @@ class serf (
   $advertise      = $::serf::params::advertise,
   $config_file    = $::serf::params::config_file,
   $config_dir     = $::serf::params::config_dir,
-  $encrypt        = $::serf::params::encrypt,
+  $encrypt_key    = $::serf::params::encrypt_key,
 
   $event_handler  = $::serf::params::event_handler,
   $join           = $::serf::params::join,
