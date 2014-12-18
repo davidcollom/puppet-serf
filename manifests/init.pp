@@ -40,9 +40,6 @@ class serf (
   include config
   include service
 
-  [
-    Class['install'],
-    Class['config']
-  ] ~>
-  Class['service']
+  Class['install'] ~> Class['service']
+  Class['config']  ~> Class['service']
 }
