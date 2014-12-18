@@ -1,6 +1,6 @@
 class serf::params{
   $version          = '0.3.0'
-  $protocol_version = 1
+  $protocol         = 1
   $bind             = $::ipaddress
   $advertise        = $::ipaddress
   $config_dir       = '/etc/serf'
@@ -10,7 +10,6 @@ class serf::params{
   $log_level        = 'info'
   $log_file         = '/var/log/serf.log'
   $node             = $::fqdn
-  $protocol         = $::serf::params::protocol
   $role             = $::serf::params::role
   $rpc_addr         = "${bind}:7373"
   $install_path     = '/usr/local/bin/'
