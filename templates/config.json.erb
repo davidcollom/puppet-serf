@@ -13,4 +13,4 @@ config_file['rpc_addr'] = @rpc_addr if @rpc_addr
 config_file['event_handlers'] = @event_handler unless @event_handler.empty?
 config_file['start_join'] = @join unless @join.empty?
 -%>
-<%=JSON.generate(config_file)%>
+<%=JSON.pretty_generate(config_file)%>
