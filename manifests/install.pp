@@ -1,13 +1,15 @@
 class serf::install{
 
-  # mitchellh refers to anything 64bit as amd64
-  case $::architecture {
-    x86_64: {
-      $_architecture = 'amd64'
-    }
-    default: {
-      $_architecture = $::architecture
-    }
+  # mitchellh refers to anything 64bit as amd64, anything 32bit as 386, and
+  # all arm variations as arm.
+  $_architecture = $::architecture ? {
+    'x86_64' => 'amd64',
+    'i386'   => '386',
+    'i486'   => '386',
+    'armel'  => 'arm',
+    'armhf'  => 'arm',
+    'armv6l' => 'arm',
+    default  => $::architecture,
   }
 
   if $::serf::install_method == 'url' {
