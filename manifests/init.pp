@@ -30,7 +30,6 @@ class serf (
   $install_url    = $::serf::params::install_url,
   $install_method = $::serf::params::install_method,
   $package_name   = $::serf::params::package_name,
-  $package_ensure = $::serf::params::package_ensure,
   $config_owner   = $::serf::params::config_owner,
   $config_group   = $::serf::params::config_group
 ) inherits serf::params

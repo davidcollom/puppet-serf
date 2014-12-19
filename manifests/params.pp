@@ -1,4 +1,4 @@
-class serf::params{
+class serf::params {
   $version          = '0.3.0'
   $protocol_version = 1
   $bind             = $::ipaddress
@@ -13,10 +13,10 @@ class serf::params{
   $protocol         = $::serf::params::protocol
   $role             = $::serf::params::role
   $rpc_addr         = "${bind}:7373"
-  $install_path     = '/usr/local/bin/'
+  $install_path     = '/usr/local/bin'
   $install_method   = 'url'
+  $unzip_package    = 'unzip'
   $package_name     = 'serf'
-  $package_ensure   = 'present'
 
   $event_handler    = [
     '/usr/bin/echo',
