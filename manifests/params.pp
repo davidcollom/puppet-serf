@@ -28,9 +28,8 @@ class serf::params{
     '10.5.2.101'
   ]
 
-  $service_name = 'serf'
-  $service_ensure = true
-  $service_hasrestart = true
-  $service_hasstatus = true
-
+  $service_config_class = $::operatingsystem ? {
+    'Ubuntu' => 'serf::config::upstart',
+    default  => 'serf::config::initscript',
+  }
 }
