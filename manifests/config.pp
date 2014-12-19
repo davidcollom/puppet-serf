@@ -1,10 +1,9 @@
-class serf::config{
-
+class serf::config {
   File {
     owner  => $::serf::config_owner,
     group  => $::serf::config_group,
     mode   => $::serf::config_file_mode,
-    notify => Service[$::serf::service_name],
+    notify => Service['serf'],
   }
 
   file {
@@ -15,11 +14,7 @@ class serf::config{
     $::serf::config_file:
       ensure  => present,
       content => template('serf/config.json.erb');
-    'serf_upstart':
-      path    =>  '/etc/init/serf.conf',
-      content =>  template('serf/upstart.conf.erb')
   }
 
-
-
+  class { $::serf::service_config_class: }
 }
