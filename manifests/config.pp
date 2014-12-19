@@ -16,5 +16,7 @@ class serf::config {
       content => template('serf/config.json.erb');
   }
 
-  class { $::serf::service_config_class: }
+  class { $::serf::service_config_class:
+    notify => Service['serf'],
+  }
 }
