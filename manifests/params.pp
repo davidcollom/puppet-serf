@@ -1,22 +1,21 @@
-class serf::params{
+class serf::params {
   $version          = '0.3.0'
-  $protocol_version = 1
+  $protocol         = 1
   $bind             = $::ipaddress
   $advertise        = $::ipaddress
   $config_dir       = '/etc/serf'
   $config_file      = "${config_dir}/serf.conf"
   $log_dir          = '/var/log/serf'
-  $encrypt          = ''
+  $encrypt_key      = ''
   $log_level        = 'info'
   $log_file         = '/var/log/serf.log'
   $node             = $::fqdn
-  $protocol         = $::serf::params::protocol
   $role             = $::serf::params::role
   $rpc_addr         = "${bind}:7373"
-  $install_path     = '/usr/local/bin/'
+  $install_path     = '/usr/local/bin'
   $install_method   = 'url'
+  $unzip_package    = 'unzip'
   $package_name     = 'serf'
-  $package_ensure   = 'present'
 
   $event_handler    = [
     '/usr/bin/echo',
@@ -28,9 +27,8 @@ class serf::params{
     '10.5.2.101'
   ]
 
-  $service_name = 'serf'
-  $service_ensure = true
-  $service_hasrestart = true
-  $service_hasstatus = true
-
+  $service_config_class = $::operatingsystem ? {
+    'Ubuntu' => 'serf::config::upstart',
+    default  => 'serf::config::initscript',
+  }
 }

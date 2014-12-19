@@ -41,7 +41,7 @@ The directory you wish to store the serf config file in, defaults to: '/etc/serf
 The name of the config file you wish to be generated, stored within config_dir
 eg:```${config_dir}/${config_file}```
 
-#####`encrypt`
+#####`encrypt_key`
 Secret key to use for encryption of Serf network traffic
 
 #####`event_handler`
@@ -89,9 +89,6 @@ Defaults to `url` but can be `package` if you want to install via a system packa
 
 #####`package_name`
 Only valid when the install_method == package. Defaults to `serf`.
-
-#####`package_ensure`
-Only valid when the install_method == package. Defaults to `present`.
 
 #####`config_owner` and `config_group`
 Specify who is to become owner of ```$config_file```

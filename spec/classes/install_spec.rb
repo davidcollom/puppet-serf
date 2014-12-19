@@ -34,7 +34,7 @@ describe 'serf::install' do
 
   context 'When requesting to install via a package and special names and ensures' do
     let(:pre_condition) { 'class { "serf": install_method => "package", 
-                                           package_ensure => "latest", 
+                                           version        => "latest", 
                                            package_name   => "custom_serf" 
                                  }' }
     it { should contain_package('custom_serf').\

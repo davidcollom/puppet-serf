@@ -16,7 +16,7 @@ class serf (
   $advertise      = $::serf::params::advertise,
   $config_file    = $::serf::params::config_file,
   $config_dir     = $::serf::params::config_dir,
-  $encrypt        = $::serf::params::encrypt,
+  $encrypt_key    = $::serf::params::encrypt_key,
 
   $event_handler  = $::serf::params::event_handler,
   $join           = $::serf::params::join,
@@ -30,7 +30,6 @@ class serf (
   $install_url    = $::serf::params::install_url,
   $install_method = $::serf::params::install_method,
   $package_name   = $::serf::params::package_name,
-  $package_ensure = $::serf::params::package_ensure,
   $config_owner   = $::serf::params::config_owner,
   $config_group   = $::serf::params::config_group
 ) inherits serf::params
@@ -40,7 +39,6 @@ class serf (
   include config
   include service
 
-  Class['install'] ->
-  Class['config'] ~>
-  Class['service']
+  Class['install'] ~> Class['service']
+  Class['config']  ~> Class['service']
 }
